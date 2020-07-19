@@ -3,11 +3,11 @@ package com.aneesh;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class MembershipInformationController {
 
 	@Autowired
@@ -25,9 +25,11 @@ public class MembershipInformationController {
 	}
 	
 	@PostMapping("/saveMemberInformation")
-	public void saveMember(MemberInformationEntity entity) {
+	public MemberInformationEntity saveMember(MemberInformationEntity entity) {
 		
 		service.save(entity);
+		return entity;
+		
 	}
 	
 	
