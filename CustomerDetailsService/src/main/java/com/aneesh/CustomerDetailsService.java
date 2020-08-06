@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CustomerDetailsService {
+public class CustomerDetailsService  {
 
 	
 	private CustomerDetailsRepository detailsRepository;
@@ -33,6 +33,7 @@ public class CustomerDetailsService {
 	}
 	
 	public CustomerDetailsEntity save(CustomerDetailsEntity entity) {
+	
 		return detailsRepository.save(entity);
 	}
 	

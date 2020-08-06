@@ -11,24 +11,23 @@ import javax.persistence.Table;
 @Table(name="memberTable")
 public class MemberInformationEntity {
 
-	
 	@Id
-	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
 	private int id;
 	
 	@Column(name="membershipId")
-	private int membershipId;
+	private String membershipId;
 	
 	
 	@Column(name = "membership")
 	private String membership;
 	
 	
-	public int getMembershipId() {
+	public String getMembershipId() {
 		return membershipId;
 	}
-	public void setMembershipId(int membershipId) {
+	public void setMembershipId(String membershipId) {
 		this.membershipId = membershipId;
 	}
 
@@ -37,6 +36,11 @@ public class MemberInformationEntity {
 	}
 	public void setMembership(String membership) {
 		this.membership = membership;
+	}
+	@Override
+	public String toString() {
+		return "MemberInformationEntity [id=" + id + ", membershipId=" + membershipId + ", membership=" + membership
+				+ "]";
 	}
 	
 	

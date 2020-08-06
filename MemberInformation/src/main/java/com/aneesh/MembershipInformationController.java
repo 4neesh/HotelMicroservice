@@ -5,14 +5,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MembershipInformationController {
 
-	@Autowired
 	private MembershipInformationService service;
 	
+
+	@Autowired
 	public MembershipInformationController(MembershipInformationService serviceArg) {
 		this.service = serviceArg;
 	}
@@ -25,10 +27,9 @@ public class MembershipInformationController {
 	}
 	
 	@PostMapping("/saveMemberInformation")
-	public MemberInformationEntity saveMember(MemberInformationEntity entity) {
+	public MemberInformationEntity saveMember(@RequestBody MemberInformationEntity entity) {
 		
-		service.save(entity);
-		return entity;
+		return service.save(entity);
 		
 	}
 	

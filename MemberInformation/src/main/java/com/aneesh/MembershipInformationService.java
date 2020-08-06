@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class MembershipInformationService {
 
-	@Autowired
 	private MemberInformationRepository repository;
 	
+	@Autowired
 	public MembershipInformationService(MemberInformationRepository repositoryArg) {
 		this.repository = repositoryArg;
 	}
@@ -20,8 +20,11 @@ public class MembershipInformationService {
 		return repository.findAll();
 	}
 	
-	public void save(MemberInformationEntity entity) {
-		repository.save(entity);
+	public MemberInformationEntity save(MemberInformationEntity entity) {
+		
+		return repository.save(entity);
 
 	}
+	
+	
 }
