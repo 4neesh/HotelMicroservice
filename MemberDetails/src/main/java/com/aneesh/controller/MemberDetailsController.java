@@ -1,4 +1,4 @@
-package com.aneesh;
+package com.aneesh.controller;
 
 import java.util.List;
 
@@ -8,26 +8,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class MembershipInformationController {
+import com.aneesh.service.MemberDetailsEntity;
+import com.aneesh.service.MembershipDetailsService;
 
-	private MembershipInformationService service;
+@RestController
+public class MemberDetailsController {
+
+	private MembershipDetailsService service;
 	
 
 	@Autowired
-	public MembershipInformationController(MembershipInformationService serviceArg) {
+	public MemberDetailsController(MembershipDetailsService serviceArg) {
 		this.service = serviceArg;
 	}
 	
-	@GetMapping("/getMembership")
-	public List<MemberInformationEntity> getMembership() {
+	@GetMapping("/getAll")
+	public List<MemberDetailsEntity> getMembership() {
 		
 		return service.getAll();
 		
 	}
 	
-	@PostMapping("/saveMemberInformation")
-	public MemberInformationEntity saveMember(@RequestBody MemberInformationEntity entity) {
+	@PostMapping("/save")
+	public MemberDetailsEntity saveMember(@RequestBody MemberDetailsEntity entity) {
 		
 		return service.save(entity);
 		

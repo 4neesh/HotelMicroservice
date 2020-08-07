@@ -1,4 +1,4 @@
-package com.aneesh;
+package com.aneesh.service;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="memberTable")
-public class MemberInformationEntity {
+public class MemberDetailsEntity {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

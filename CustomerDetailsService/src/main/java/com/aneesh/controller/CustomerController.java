@@ -1,10 +1,14 @@
-package com.aneesh;
+package com.aneesh.controller;
 
 import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.aneesh.service.CustomerDetailsEntity;
+import com.aneesh.service.CustomerDetailsService;
 
 @RestController
 public class CustomerController {
@@ -23,7 +27,7 @@ public class CustomerController {
 		return details;
 	}
 	
-	@PostMapping("/addDetails")
+	@PostMapping("/save")
 	public CustomerDetailsEntity saveDetails(@RequestBody CustomerDetailsEntity entity) {
 		
 		return detailsService.save(entity);

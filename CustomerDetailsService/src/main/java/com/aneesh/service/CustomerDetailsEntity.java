@@ -1,4 +1,4 @@
-package com.aneesh;
+package com.aneesh.service;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
