@@ -39,4 +39,8 @@ public class CustomerDetailsService  {
 		return detailsRepository.save(entity);
 	}
 	
+	public CustomerDetailsEntity get(int id) {
+		
+		return detailsRepository.findById(id).get();
+	}
 }

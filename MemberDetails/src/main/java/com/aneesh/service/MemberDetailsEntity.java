@@ -42,6 +42,9 @@ public class MemberDetailsEntity {
 		return "MemberInformationEntity [id=" + id + ", membershipId=" + membershipId + ", membership=" + membership
 				+ "]";
 	}
+	public int getId() {
+		return id;
+	}
 	
 	
 	

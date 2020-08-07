@@ -28,5 +28,12 @@ public class MembershipDetailsService {
 
 	}
 	
+	public MemberDetailsEntity get(int cid) {
+		
+		MemberDetailsEntity temp = repository.findById(cid).get();
+	
+		return temp;
+	}
+	
 	
 }
