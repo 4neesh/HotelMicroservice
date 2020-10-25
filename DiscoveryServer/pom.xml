@@ -5,38 +5,26 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.2.RELEASE</version>
+		<version>2.3.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.aneesh</groupId>
-	<artifactId>ZipkinServer</artifactId>
+	<artifactId>DiscoveryServer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ZipkinServer</name>
-	<description>Zipkin server used for tracing calls through the services</description>
+	<name>DiscoveryServer</name>
+	<description>Eureka server for service discover</description>
 
 	<properties>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Hoxton.SR7</spring-cloud.version>
+		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-zipkin</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 		</dependency>
 
-		<!-- <dependency>
-		    <groupId>io.zipkin.java</groupId>
-		    <artifactId>zipkin-server</artifactId>
-		    <version>2.12.9</version>
-		</dependency> -->
-		
-		<!-- <dependency>
-		    <groupId>io.zipkin.java</groupId>
-		    <artifactId>zipkin-autoconfigure-ui</artifactId>
-		    <version>2.12.9</version>
-		</dependency>  -->
-		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -48,7 +36,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-	
 	</dependencies>
 
 	<dependencyManagement>
