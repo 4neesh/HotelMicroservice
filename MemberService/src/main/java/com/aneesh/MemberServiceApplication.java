@@ -22,38 +22,48 @@ import brave.Tracer;
 @RestController
 public class MemberServiceApplication {
 
+	
+	
 	public static void main(String[] args) {
 		SpringApplication.run(MemberServiceApplication.class, args);
 	}
 	
-	private static Logger log = LoggerFactory.getLogger(MemberServiceApplication.class);
-	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
+//	private static Logger log = LoggerFactory.getLogger(MemberServiceApplication.class);
+	
+//	@Bean
+//	public RestTemplate restTemplate() {
+//		return new RestTemplate();
+//	}
+	
+//	@Autowired
+//	Tracer tracer;
+//	
+//	@Autowired
+//	RestTemplate template;
+	
+	@GetMapping("/test")
+	public String getter() {
+		return "lo";
 	}
-	
-	@Autowired
-	Tracer tracer;
-	
-	@Autowired
-	RestTemplate template;
 	
 	@GetMapping("/member/{cid}")
 	public @ResponseBody String getMember(@PathVariable Integer cid) {
 		
-		Span span = tracer.currentSpan().name("MemberServiceSpan").start();
-		
-		log.info("Get Request");
-		try {
-			span.tag("requestID", Integer.toString(cid));
-			
-		}
-		finally {
-			span.finish();
-		}
-		ResponseEntity<String> customerDetail = template.getForEntity("http://localhost:8883/get/1", String.class);
-		ResponseEntity<String> memberDetail = template.getForEntity("http://localhost:8884/get/22", String.class);
+//		Span span = tracer.currentSpan().name("MemberServiceSpan").start();
+//		
+//		log.info("Get Request");
+//		try {
+//			span.tag("requestID", Integer.toString(cid));
+//			
+//		}
+//		finally {
+//			span.finish();
+//		}
+		//ResponseEntity<String> customerDetail = template.getForEntity("http://localhost:8883/get/1", String.class);
 
-		return customerDetail.getBody() + "|" + memberDetail.getBody();
+		
+		return "test";
 	}
+	
+	
 }
